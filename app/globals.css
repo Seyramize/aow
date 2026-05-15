@@ -1,0 +1,66 @@
+/* ─── Argent CF ───────────────────────────────────────────────────────────────
+   Drop your licensed Argent CF font files into /public/fonts/ and
+   uncomment the @font-face block below.
+   Get the font at: https://connary.com/argentcf.html
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/*
+@font-face {
+  font-family: 'Argent CF';
+  src: url('/fonts/ArgentCF-Thin.woff2') format('woff2'),
+       url('/fonts/ArgentCF-Thin.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Argent CF';
+  src: url('/fonts/ArgentCF-Regular.woff2') format('woff2'),
+       url('/fonts/ArgentCF-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #fbfcff;
+  font-family: var(--font-outfit), Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0b1b28; }
+::-webkit-scrollbar-thumb { background: rgba(248,237,223,0.3); border-radius: 3px; }
