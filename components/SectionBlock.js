@@ -6,14 +6,17 @@ export default function SectionBlock({ id, title, description, children, bg = 'd
   return (
     <section
       id={id}
-      style={{ padding: '90px 40px', background: 'transparent' }}
+      style={{
+        padding: 'clamp(40px, 8vw, 90px) clamp(20px, 5vw, 40px)',
+        background: 'transparent',
+      }}
     >
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: '52px' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(32px, 6vw, 52px)' }}>
           <h2
             style={{
               fontFamily: FONTS.heading,
-              fontSize: 'clamp(30px, 4vw, 50px)',
+              fontSize: 'clamp(24px, 6vw, 50px)',
               fontWeight: '300',
               color: dark ? COLORS.white : COLORS.blue,
               marginBottom: '18px',
@@ -26,7 +29,7 @@ export default function SectionBlock({ id, title, description, children, bg = 'd
           <p
             style={{
               fontFamily: FONTS.body,
-              fontSize: '16px',
+              fontSize: 'clamp(14px, 3vw, 16px)',
               color: dark ? 'rgba(248,237,223,0.7)' : 'rgba(11,27,40,0.7)',
               maxWidth: '571px',
               margin: '0 auto',

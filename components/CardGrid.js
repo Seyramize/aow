@@ -1,6 +1,7 @@
 export default function CardGrid({ cols = 2, children }) {
   return (
     <div
+      className="card-grid"
       style={{
         display: 'grid',
         gridTemplateColumns: `repeat(${cols}, 1fr)`,

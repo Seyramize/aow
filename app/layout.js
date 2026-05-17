@@ -16,6 +16,16 @@ export const metadata = {
   },
 }
 
+export function generateViewport() {
+  return {
+    width: 'device-width',
+    initialScale: 1.0,
+    maximumScale: 5.0,
+    userScalable: true,
+    viewportFit: 'cover',
+  }
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
