@@ -31,7 +31,7 @@ export default function AboutSection() {
             className="about-body"
             style={{ fontFamily: FONTS.body, color: 'rgba(248,237,223,0.8)' }}
           >
-            Africa Oil Week is more than a conference, it is a space for connection and opportunity.
+            AOW:Energy is Africa’s leading platform for upstream investment, exploration deal-making and strategic energy dialogue. For over 31 years, AOW has brought together the most influential decision-makers shaping Africa’s energy future, including Heads of State, Ministers, CEOs, investors, national oil companies and global operators.
           </p>
 
           <p

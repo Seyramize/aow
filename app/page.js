@@ -70,7 +70,10 @@ export default function Home() {
           <SectionBlock
             id="concierge-packages"
             title="Arrival, Airport & Visa"
-            description="Your journey into Ghana should feel seamless from the moment you land. Through our integrated arrival, airport, and visa services, we ensure every step — from entry clearance to your final transfer — is handled with precision, discretion, and ease."
+            description={[
+              "Your journey into Ghana should feel seamless from the moment you land. Through our integrated arrival, airport, and visa services, we ensure every step - from entry clearance to your final transfer - is handled with precision, discretion, and ease.",
+              "Whether you prefer a streamlined arrival or a fully private VIP experience, our team manages every detail so you can move through the airport without friction."
+            ]}
           >
             <CardGrid cols={3}>
               {ARRIVAL_SERVICES.map((s) => (
@@ -82,7 +85,10 @@ export default function Home() {
           {/* Transportation */}
           <SectionBlock
             title="Transportation"
-            description="Navigating Accra during Africa Oil Week requires more than just transport — it requires reliability, responsiveness, and comfort at every moment."
+            description={[
+              "Navigating Accra during Africa Oil Week requires more than just transport - it requires reliability, responsiveness, and comfort at every moment.",
+              "Our transportation system is designed to operate as an extension of your schedule, ensuring you move effortlessly between meetings, venues, and experiences with minimal wait time and maximum comfort."
+            ]}
           >
             <CardGrid cols={2}>
               {TRANSPORT_SERVICES.map((s) => (
@@ -94,7 +100,10 @@ export default function Home() {
           {/* Accommodation */}
           <SectionBlock
             title="Accommodation"
-            description="We've curated a selection of the city's leading hotels, chosen for their proximity to the Africa Oil Week venue, quality of service, and overall guest experience."
+            description={[
+              "Your stay in Accra should reflect both comfort and convenience. We've curated a selection of the city's leading hotels, chosen for their proximity to the Africa Oil Week venue, quality of service, and overall guest experience.",
+              "From internationally recognized luxury brands to boutique stays, each option has been selected to meet the expectations of AOW delegates."
+            ]}
           >
             <CardGrid cols={3}>
               {HOTELS.map((h) => (

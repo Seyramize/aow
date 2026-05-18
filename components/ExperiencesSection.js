@@ -25,9 +25,10 @@ export default function ExperiencesSection() {
                 Curated Experiences
               </h2>
               <p className="exp-subtitle" style={{ fontFamily: FONTS.body, color: COLORS.blue }}>
-                Accra offers more than a place to attend — it offers a city to experience.
-                We design curated experiences that allow delegates to step beyond the conference
-                and engage with Ghana through culture, cuisine, and connection.
+                Accra offers more than a place to attend, it offers a city to experience.
+              </p>
+              <p className="exp-subtitle" style={{ fontFamily: FONTS.body, color: COLORS.blue, padding: '10px' }}>
+                We design curated experiences that allow delegates to step beyond the conference environment and engage with Ghana through culture, cuisine, and connection. Whether for personal exploration or client hosting, each experience is tailored to feel intentional and memorable.
               </p>
             </div>
 
@@ -63,8 +64,13 @@ export default function ExperiencesSection() {
                     className="exp-explore-body"
                     style={{ fontFamily: FONTS.body, color: COLORS.white }}
                   >
-                    These are just a selection of what&apos;s available. Discover our full range of curated
-                    experiences, from cultural immersions to dining and social experiences.
+                    These are just a selection of what&apos;s available.
+                  </p>
+                  <p
+                    className="exp-explore-body"
+                    style={{ fontFamily: FONTS.body, color: COLORS.white, padding: "-1px" }}
+                  >
+                    Discover our full range of curated experiences, from cultural immersions to dining and social experiences, and book directly through beyond experiences.
                   </p>
                   <Link
                     href="https://experiencesbybeyond.com/experiences"

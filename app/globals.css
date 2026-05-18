@@ -1095,7 +1095,7 @@ body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/images/hero.png');
+  background-image: url('/images/aowhero.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1179,13 +1179,14 @@ body {
 
 @media (max-width: 600px) {
   .hero-section {
-    height: 100svh !important;
+    height: 85dvh !important;
     min-height: unset !important;
+    padding-bottom:52px !important;
     background-color: #000;
   }
 
   .hero-bg {
-    background-image: url('/images/hero.png');
+    background-image: url('/images/aowhero.jpg');
   }
 
   .hero-logo img {

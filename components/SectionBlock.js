@@ -2,6 +2,9 @@ import { COLORS, FONTS } from '@/lib/constants'
 
 export default function SectionBlock({ id, title, description, children, bg = 'dark' }) {
   const dark = bg === 'dark'
+  
+  // Handle both string and array descriptions
+  const paragraphs = Array.isArray(description) ? description : [description]
 
   return (
     <section
@@ -26,19 +29,23 @@ export default function SectionBlock({ id, title, description, children, bg = 'd
           >
             {title}
           </h2>
-          <p
-            style={{
-              fontFamily: FONTS.body,
-              fontSize: 'clamp(14px, 3vw, 16px)',
-              color: dark ? 'rgba(248,237,223,0.7)' : 'rgba(11,27,40,0.7)',
-              maxWidth: '571px',
-              margin: '0 auto',
-              lineHeight: '1.5',
-              letterSpacing: '-0.16px',
-            }}
-          >
-            {description}
-          </p>
+          <div style={{ maxWidth: '571px', margin: '0 auto' }}>
+            {paragraphs.map((para, idx) => (
+              <p
+                key={idx}
+                style={{
+                  fontFamily: FONTS.body,
+                  fontSize: 'clamp(14px, 3vw, 16px)',
+                  color: dark ? 'rgba(248,237,223,0.7)' : 'rgba(11,27,40,0.7)',
+                  margin: idx === 0 ? '0 0 14px 0' : '14px 0 0 0',
+                  lineHeight: '1.5',
+                  letterSpacing: '-0.16px',
+                }}
+              >
+                {para}
+              </p>
+            ))}
+          </div>
         </div>
         {children}
       </div>
