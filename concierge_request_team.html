@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New AOW Concierge Request Submission</title>
+  <style>
+    body, .email-body       { margin:0;padding:0;background-color:#ffffff !important; }
+    .header-bg, .footer-bg  { background-color:#000000 !important; }
+    .header-text, .footer-text { color:#ffffff !important; }
+    .text-body               { color:#1a1a1a !important; }
+    .box-bg                  { background-color:#d9dce3 !important; }
+    .section-title           { color:#1a1a1a !important; }
+    .label-text              { color:#6b6b6b !important; }
+    .value-text              { color:#1a1a1a !important; }
+    .divider                 { border-color:#1a1a1a !important; }
+
+    @media (prefers-color-scheme: dark) {
+      body, .email-body     { background-color:#0d0d0d !important; }
+      .text-body            { color:#e8e8e8 !important; }
+      .box-bg               { background-color:#2a2d33 !important; }
+      .section-title        { color:#f5f5f5 !important; }
+      .label-text           { color:#9a9a9a !important; }
+      .value-text           { color:#f5f5f5 !important; }
+      .divider              { border-color:#f5f5f5 !important; }
+    }
+  </style>
+</head>
+<body class="email-body" style="margin:0;padding:0;background-color:#ffffff;font-family:Helvetica,Arial,sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+    <tr>
+      <td align="center" style="padding:0;">
+
+        <table width="600" cellpadding="0" cellspacing="0" border="0" role="presentation" style="max-width:600px;width:100%;">
+
+          <!-- Header -->
+          <tr>
+            <td class="header-bg" align="center" style="background-color:#000000;padding:22px 24px;text-align:center;">
+              <p class="header-text" style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#ffffff;line-height:1.4;">
+                New AOW Concierge Request Submission
+              </p>
+            </td>
+          </tr>
+
+          <!-- Intro -->
+          <tr>
+            <td align="center" style="padding:32px 32px 24px;text-align:center;">
+              <p class="text-body" style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.65;color:#1a1a1a;text-align:center;">
+                A new concierge request has been submitted through the AOW 2026 Concierge Portal.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Delegate Information -->
+          <tr>
+            <td align="center" style="padding:0 32px 16px;">
+              <table class="box-bg" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#d9dce3;border-radius:12px;">
+                <tr>
+                  <td align="center" style="padding:28px 24px 32px;text-align:center;">
+
+                    <p class="section-title" style="margin:0 0 12px;font-family:Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;text-align:center;">
+                      Delegate Information
+                    </p>
+                    <table width="80%" cellpadding="0" cellspacing="0" border="0" role="presentation" align="center" style="margin:0 auto 24px;">
+                      <tr>
+                        <td class="divider" style="border-bottom:1px solid #1a1a1a;font-size:0;line-height:0;">&nbsp;</td>
+                      </tr>
+                    </table>
+
+                    <p class="label-text" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#6b6b6b;text-align:center;">Full Name</p>
+                    <p class="value-text" style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:15px;color:#1a1a1a;text-align:center;">{{ full_name }}</p>
+
+                    <p class="label-text" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#6b6b6b;text-align:center;">Company</p>
+                    <p class="value-text" style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:15px;color:#1a1a1a;text-align:center;">{{ company }}</p>
+
+                    <p class="label-text" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#6b6b6b;text-align:center;">Email Address</p>
+                    <p class="value-text" style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:15px;color:#1a1a1a;text-align:center;">{{ email_address }}</p>
+
+                    <p class="label-text" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#6b6b6b;text-align:center;">Phone Number</p>
+                    <p class="value-text" style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:15px;color:#1a1a1a;text-align:center;">{{ phone_number }}</p>
+
+                    <p class="label-text" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#6b6b6b;text-align:center;">Country of Origin</p>
+                    <p class="value-text" style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:15px;color:#1a1a1a;text-align:center;">{{ country_of_origin }}</p>
+
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Service Selection -->
+          <tr>
+            <td align="center" style="padding:0 32px 16px;">
+              <table class="box-bg" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#d9dce3;border-radius:12px;">
+                <tr>
+                  <td align="center" style="padding:28px 24px 32px;text-align:center;">
+
+                    <p class="section-title" style="margin:0 0 12px;font-family:Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;text-align:center;">
+                      Service Selection
+                    </p>
+                    <table width="80%" cellpadding="0" cellspacing="0" border="0" role="presentation" align="center" style="margin:0 auto 24px;">
+                      <tr>
+                        <td class="divider" style="border-bottom:1px solid #1a1a1a;font-size:0;line-height:0;">&nbsp;</td>
+                      </tr>
+                    </table>
+
+                    <p class="label-text" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#6b6b6b;text-align:center;">Arrival Services</p>
+                    <p class="value-text" style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#1a1a1a;text-align:center;">{{ arrival_services }}</p>
+
+                    <p class="label-text" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#6b6b6b;text-align:center;">Transportation</p>
+                    <p class="value-text" style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#1a1a1a;text-align:center;">{{ transportation_services }}</p>
+
+                    <p class="label-text" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#6b6b6b;text-align:center;">Accommodation</p>
+                    <p class="value-text" style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#1a1a1a;text-align:center;">{{ accommodation }}</p>
+
+                    <p class="label-text" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#6b6b6b;text-align:center;">Curated Experiences</p>
+                    <p class="value-text" style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#1a1a1a;text-align:center;">{{ experience_selection }}</p>
+
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Additional Requirements -->
+          <tr>
+            <td align="center" style="padding:0 32px 16px;">
+              <table class="box-bg" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="background-color:#d9dce3;border-radius:12px;">
+                <tr>
+                  <td align="center" style="padding:28px 24px 32px;text-align:center;">
+
+                    <p class="section-title" style="margin:0 0 12px;font-family:Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;text-align:center;">
+                      Additional Requirements
+                    </p>
+                    <table width="80%" cellpadding="0" cellspacing="0" border="0" role="presentation" align="center" style="margin:0 auto 24px;">
+                      <tr>
+                        <td class="divider" style="border-bottom:1px solid #1a1a1a;font-size:0;line-height:0;">&nbsp;</td>
+                      </tr>
+                    </table>
+
+                    <p class="value-text" style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1a1a1a;text-align:center;">{{ preferences_and_requirements }}</p>
+
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Next Steps -->
+          <tr>
+            <td align="center" style="padding:32px 32px 40px;text-align:center;">
+              <p class="section-title" style="margin:0 0 12px;font-family:Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;text-align:center;">
+                Next Steps?
+              </p>
+              <table width="80%" cellpadding="0" cellspacing="0" border="0" role="presentation" align="center" style="margin:0 auto 20px;">
+                <tr>
+                  <td class="divider" style="border-bottom:1px solid #1a1a1a;font-size:0;line-height:0;">&nbsp;</td>
+                </tr>
+              </table>
+              <p class="text-body" style="margin:0 0 16px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.65;color:#1a1a1a;text-align:center;">
+                Please review the request and coordinate directly with the delegate regarding:
+              </p>
+              <p class="text-body" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.8;color:#1a1a1a;text-align:center;">Availability</p>
+              <p class="text-body" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.8;color:#1a1a1a;text-align:center;">Recommendations</p>
+              <p class="text-body" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.8;color:#1a1a1a;text-align:center;">Logistics</p>
+              <p class="text-body" style="margin:0 0 6px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.8;color:#1a1a1a;text-align:center;">Confirmations</p>
+              <p class="text-body" style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.8;color:#1a1a1a;text-align:center;">Invoicing</p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="footer-bg" align="center" style="background-color:#000000;padding:22px 24px;text-align:center;">
+              <p class="footer-text" style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#ffffff;text-align:center;">
+                Beyond Accra Concierge &nbsp;|&nbsp; AOW 2026
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

@@ -1,16 +1,26 @@
 'use client'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import Image from 'next/image'
 import Modal from './Modal'
 import FormField from './FormField'
+import TurnstileWidget from './TurnstileWidget'
 import { useCart } from '@/lib/CartContext'
 import { validateContactForm } from '@/lib/validation'
+import { isTurnstileConfigured } from '@/lib/turnstileClient'
 import { ASSETS, COLORS, FONTS } from '@/lib/constants'
 
 export default function BookingModal({ isOpen, onClose, onSuccess }) {
   const { cart } = useCart()
   const [form, setForm] = useState({ name: '', company: '', email: '', phone: '', notes: '' })
   const [errors, setErrors] = useState({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const [turnstileKey, setTurnstileKey] = useState(0)
+
+  const handleTurnstileVerify = useCallback((token) => {
+    setTurnstileToken(token || '')
+  }, [])
 
   const set = (key) => (e) => {
     setForm((p) => ({ ...p, [key]: e.target.value }))
@@ -23,11 +33,62 @@ export default function BookingModal({ isOpen, onClose, onSuccess }) {
     return acc
   }, {})
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    console.log('Submit button clicked', {
+      formData: form,
+      cartLength: cart.length,
+      turnstileConfigured: isTurnstileConfigured(),
+      turnstileToken: !!turnstileToken,
+    })
+    
+    setSubmitError('')
     const e = validateContactForm(form)
-    if (Object.keys(e).length) { setErrors(e); return }
-    onClose()
-    onSuccess()
+    if (!cart.length) e.cart = 'Please select at least one service'
+    
+    if (Object.keys(e).length) {
+      console.log('Validation errors:', e)
+      setErrors(e)
+      return
+    }
+    
+    if (isTurnstileConfigured() && !turnstileToken) {
+      console.log('Missing Turnstile token')
+      setSubmitError('Please complete the security check.')
+      return
+    }
+
+    setIsSubmitting(true)
+    try {
+      console.log('Sending booking request...')
+      const res = await fetch('/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, cart, turnstileToken }),
+      })
+      console.log('Response status:', res.status)
+      
+      const data = await res.json().catch(() => ({}))
+      console.log('Response data:', data)
+      
+      if (!res.ok) {
+        if (data.errors) setErrors(data.errors)
+        const errorMsg = data.error || 'Something went wrong. Please try again.'
+        console.error('API error:', errorMsg)
+        setSubmitError(errorMsg)
+        setTurnstileToken('')
+        setTurnstileKey((k) => k + 1)
+        return
+      }
+      
+      console.log('Booking submitted successfully')
+      onClose()
+      onSuccess()
+    } catch (err) {
+      console.error('Submit error:', err)
+      setSubmitError('Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -117,16 +178,34 @@ export default function BookingModal({ isOpen, onClose, onSuccess }) {
               }}
             />
 
+            {errors.cart && (
+              <p style={{ fontFamily: FONTS.body, color: '#c0392b', fontSize: '14px', marginBottom: '12px' }}>
+                {errors.cart}
+              </p>
+            )}
+            <TurnstileWidget onVerify={handleTurnstileVerify} resetKey={turnstileKey} />
+
+            {submitError && (
+              <p style={{ fontFamily: FONTS.body, color: '#c0392b', fontSize: '14px', marginBottom: '12px' }}>
+                {submitError}
+              </p>
+            )}
             <button
-              onClick={handleSubmit}
+              onClick={() => {
+                console.log('Button clicked - disabled:', isSubmitting || (isTurnstileConfigured() && !turnstileToken))
+                handleSubmit()
+              }}
+              disabled={isSubmitting || (isTurnstileConfigured() && !turnstileToken)}
               className="booking-modal-submit"
               style={{
                 background: COLORS.blue,
                 color: COLORS.white,
                 fontFamily: FONTS.body,
+                opacity: isSubmitting ? 0.7 : 1,
+                cursor: isSubmitting ? 'not-allowed' : 'pointer',
               }}
             >
-              Send Request to Concierge
+              {isSubmitting ? 'Sending…' : 'Send Request to Concierge'}
             </button>
           </div>
         </div>

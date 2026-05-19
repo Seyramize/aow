@@ -9,6 +9,7 @@ export default function ServiceCard({
   title,
   priceLabel,
   price,
+  priceNote,
   bullets = [],
   description,
   category,
@@ -152,6 +153,21 @@ export default function ServiceCard({
                 >
                   {price}
                 </div>
+                {priceNote && (
+                  <div
+                    className="service-card-price-note"
+                    style={{
+                      color: 'rgba(255,255,255,0.6)',
+                      fontSize: 'clamp(8px, 2vw, 10px)',
+                      fontFamily: FONTS.body,
+                      letterSpacing: '0.5px',
+                      textTransform: 'lowercase',
+                      marginTop: '2px',
+                    }}
+                  >
+                    {priceNote}
+                  </div>
+                )}
               </div>
             </div>
 

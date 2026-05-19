@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Concierge Enquiry Has Been Received</title>
+  <style>
+    body, .email-body     { background-color:#f4f0eb !important; }
+    .email-card           { background-color:#ffffff !important; }
+    .text-primary         { color:#041B2D !important; }
+    .text-body            { color:#4a4a4a !important; }
+    .box-bg               { background-color:#f8f5f0 !important; }
+    .footer-bg            { background-color:#041B2D !important; }
+    .footer-text          { color:#F5EBDD !important; }
+    .footer-sub           { color:rgba(245,235,221,0.5) !important; }
+    .btn                  { background-color:#041B2D !important; color:#F5EBDD !important; }
+
+    @media (prefers-color-scheme: dark) {
+      body, .email-body   { background-color:#0d0d0d !important; }
+      .email-card         { background-color:#1a1a1a !important; }
+      .text-primary       { color:#F5EBDD !important; }
+      .text-body          { color:#b0a89e !important; }
+      .box-bg             { background-color:#242424 !important; }
+      .footer-bg          { background-color:#000000 !important; }
+      .footer-text        { color:#F5EBDD !important; }
+      .footer-sub         { color:rgba(245,235,221,0.4) !important; }
+      .btn                { background-color:#F5EBDD !important; color:#041B2D !important; }
+    }
+  </style>
+</head>
+<body class="email-body" style="margin:0;padding:0;background-color:#f4f0eb;font-family:Georgia,serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td align="center" style="padding:40px 16px;">
+
+        <table class="email-card" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:12px;overflow:hidden;">
+
+          <!-- Hero Image — 120px tall -->
+          <tr>
+            <td style="padding:0;line-height:0;">
+              <img src="YOUR_MAILTRAP_IMAGE_URL_HERE" alt="Beyond Concierge AOW 2026" width="600" style="width:100%;max-width:600px;height:120px;object-fit:cover;display:block;border-radius:12px 12px 0 0;" />
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:44px 48px 36px;">
+              <p class="text-primary" style="margin:0 0 6px;font-family:Georgia,serif;font-size:16px;color:#041B2D;">Hello {{ full_name }},</p>
+              <p class="text-body" style="margin:0 0 24px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.7;color:#4a4a4a;">
+                Thank you for contacting Beyond Concierge, the official concierge partner for Africa Oil Week 2026. Your submission has been received and is currently being reviewed by our concierge team.
+              </p>
+
+              <!-- What's Next Box -->
+              <table class="box-bg" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f8f5f0;border-radius:10px;margin-bottom:32px;">
+                <tr>
+                  <td style="padding:28px 32px;">
+                    <p class="text-primary" style="margin:0 0 14px;font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#041B2D;">What's Next?</p>
+                    <p class="text-body" style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.7;color:#4a4a4a;">
+                      A concierge team member will review your message and respond directly to assist with your request.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <p class="text-body" style="margin:0 0 32px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.7;color:#4a4a4a;">
+                We look forward to assisting you in Accra.
+              </p>
+
+              <!-- CTA Button -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center">
+                    <a href="mailto:operations@beyondaccra.com" class="btn" style="display:inline-block;background-color:#041B2D;color:#F5EBDD;font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:14px 36px;border-radius:50px;">Contact Concierge</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="footer-bg" style="background-color:#041B2D;padding:28px 48px;text-align:center;border-radius:0 0 12px 12px;">
+              <p class="footer-text" style="margin:0 0 4px;font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#F5EBDD;">Beyond Accra Concierge</p>
+              <p class="footer-sub" style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,235,221,0.5);">AOW 2026</p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
