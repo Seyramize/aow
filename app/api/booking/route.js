@@ -36,7 +36,6 @@ export async function POST(request) {
       phone,
       notes,
       cart,
-      teamEmails,
     })
 
     console.log('Booking emails sent successfully')

@@ -33,7 +33,6 @@ export async function POST(request) {
       email,
       phone,
       message,
-      teamEmails,
     })
 
     return NextResponse.json({ ok: true })
