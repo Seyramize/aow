@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getTeamEmails, isSandbox } from '@/lib/mailtrap'
+
 import { sendEnquiryEmails } from '@/lib/emails/dispatch'
 import { validateEnquirySubmission } from '@/lib/validateSubmission'
 import { getClientIp, verifyTurnstileToken } from '@/lib/turnstile'
@@ -24,9 +24,6 @@ export async function POST(request) {
 
     const { name, company, email, phone, message } = body
     
-    // Only get team emails in production; in sandbox/dev, dispatch.js will handle it
-    const teamEmails = isSandbox() ? [] : getTeamEmails()
-
     await sendEnquiryEmails({
       name,
       company,
