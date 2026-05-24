@@ -12,7 +12,14 @@ export const metadata = {
   description:
     'As the official concierge partner for Africa Oil Week 2026, Beyond coordinates arrival services, transportation, accommodation, and curated experiences for delegates visiting Accra.',
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon0.svg', type: 'image/svg+xml' },
+      { url: '/icon1.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', type: 'image/png' },
+    ],
   },
 }
 

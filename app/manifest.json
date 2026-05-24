@@ -1,0 +1,21 @@
+{
+  "name": "Beyond Accra Concierge | AOW 2026",
+  "short_name": "Beyond Accra",
+  "icons": [
+    {
+      "src": "/icon1.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#090303",
+  "background_color": "#0a0202",
+  "display": "standalone"
+}
