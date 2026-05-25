@@ -1341,7 +1341,7 @@ a {
 
 @media (max-width: 600px) {
   .service-card {
-    height: 300px !important;
+    height: 480px !important;
     transform: none !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
   }

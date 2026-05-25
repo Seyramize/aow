@@ -34,7 +34,7 @@ export default function ServiceCard({
         onMouseLeave={() => setHovered(false)}
         style={{
           position: 'relative',
-          height: 'clamp(280px, 65vw, 400px)',
+          height: 'clamp(380px, 80vw, 480px)',
           borderRadius: '10px',
           overflow: 'hidden',
           cursor: 'pointer',
