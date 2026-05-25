@@ -12,6 +12,7 @@ export default function ServiceCard({
   priceNote,
   bullets = [],
   description,
+  roomTypes = [],
   category,
   badge,
 }) {
@@ -175,7 +176,7 @@ export default function ServiceCard({
             <div
               className="service-card-bullets"
               style={{
-                maxHeight: isActive ? '120px' : '0',
+                maxHeight: isActive ? '200px' : '0',
                 opacity: isActive ? 1 : 0,
                 marginBottom: isActive ? '14px' : '0',
               }}
@@ -227,6 +228,51 @@ export default function ServiceCard({
                   </span>
                 </div>
               ))}
+              {roomTypes.length > 0 && (
+                <div
+                  style={{
+                    marginTop: bullets.length > 0 ? '10px' : '0',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '4px',
+                  }}
+                >
+                  {roomTypes.map((r, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        borderBottom: i < roomTypes.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                        paddingBottom: '3px',
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: 'rgba(255,255,255,0.72)',
+                          fontSize: 'clamp(9px, 2vw, 11px)',
+                          fontFamily: FONTS.body,
+                          letterSpacing: '0.3px',
+                        }}
+                      >
+                        {r.type}
+                      </span>
+                      <span
+                        style={{
+                          color: COLORS.gold,
+                          fontSize: 'clamp(9px, 2vw, 11px)',
+                          fontFamily: FONTS.body,
+                          fontWeight: '600',
+                          letterSpacing: '0.3px',
+                        }}
+                      >
+                        {r.price}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* CTA button */}
